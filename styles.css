@@ -134,9 +134,9 @@ body {
 .hero-title {
   font-family: "Montserrat", "Poppins", sans-serif;
   color: var(--accent);
-  font-size: 140px;
-  letter-spacing: 12px;
-  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  letter-spacing: 0.05em;
+  font-weight: 800;
   z-index: 5;
   position: relative;
   margin-top: 70px;
@@ -572,109 +572,167 @@ body {
 }
 
 /* ---------- Responsive ---------- */
+/* ---------- Responsive Design ---------- */
+
+/* Laptops & smaller desktops (under 1200px) */
 @media (max-width: 1200px) {
   .hero-title {
-    font-size: 110px;
+    font-size: 100px;
   }
   .about-body {
-    grid-template-columns: 1fr 360px 320px;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
   }
   .project-image {
-    width: 520px;
-    height: 320px;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
   }
   .projects-left-visual {
     display: none;
   }
   .exp-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .awards-body {
+    gap: 40px;
   }
 }
 
-@media (max-width: 860px) {
+/* Tablets (under 900px) */
+@media (max-width: 900px) {
   .nav-inner {
-    width: 94%;
+    width: 92%;
   }
+
   .nav-links {
-    gap: 40px;
+    gap: 24px;
+    font-size: 16px;
   }
+
   .hero-center {
-    width: 360px;
-    height: 360px;
+    width: 60vw;
+    height: auto;
   }
   .hero-left,
   .hero-right {
-    width: 220px;
-    height: 150px;
+    width: 25vw;
+    height: auto;
   }
+
   .hero-title {
-    font-size: 96px;
-    letter-spacing: 8px;
+    font-size: 72px;
+    letter-spacing: 6px;
   }
+
   .about-body {
     grid-template-columns: 1fr;
-  }
-  .about-name {
-    order: 3;
-    margin-top: 28px;
-  }
-  .about-big {
-    font-size: 72px;
     text-align: center;
   }
+  .about-photo {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .about-big {
+    font-size: 56px;
+  }
+
   .exp-body {
     flex-direction: column;
+    align-items: center;
   }
   .exp-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     width: 100%;
   }
+
   .projects-cards {
     flex-direction: column;
+    align-items: center;
+    gap: 40px;
   }
+
   .project-card {
     flex-direction: column;
+    width: 90%;
+    max-width: 500px;
   }
   .project-card.invert {
     flex-direction: column;
   }
+
   .project-image {
     width: 100%;
-    height: 300px;
+    height: auto;
   }
+
   .project-meta {
     text-align: center !important;
   }
-  .education-title {
-    font-size: 80px;
+
+  .education-title,
+  .contact-title,
+  .awards-title {
+    font-size: 60px;
+    text-align: center;
   }
-  .contact-title {
-    font-size: 80px;
-  }
+
   .awards-body {
     flex-direction: column;
+    align-items: center;
+  }
+  .awards-left-img {
+    width: 80%;
+    height: auto;
+  }
+  .awards-list {
+    font-size: 16px;
+    text-align: center;
   }
 }
 
-@media (max-width: 480px) {
+/* Phones (under 600px) */
+@media (max-width: 600px) {
+  body {
+    padding: 0 4%;
+  }
+
   .hero-title {
-    font-size: 64px;
-    letter-spacing: 6px;
+    font-size: 48px;
+    letter-spacing: 3px;
   }
+
   .scroll-btn {
-    padding: 8px 20px;
+    padding: 8px 18px;
+    font-size: 14px;
   }
+
   .about-photo {
-    width: 300px;
-    height: 380px;
+    width: 90%;
   }
   .about-name span {
-    font-size: 48px;
+    font-size: 36px;
   }
+
   .exp-title {
-    font-size: 48px;
+    font-size: 42px;
   }
-  .exp-grid {
-    grid-template-columns: 1fr;
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-meta p {
+    font-size: 14px;
+  }
+
+  .awards-title {
+    font-size: 42px;
+  }
+  .awards-list {
+    font-size: 14px;
+    line-height: 1.8;
   }
 }
